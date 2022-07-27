@@ -1,6 +1,26 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+
+// onboarding screens
+const Stack = createStackNavigator();
+
+const SignIn = () => {
+  return (
+    <View style={styles.layout}>
+      <Text style={styles.title}>Sign in screen</Text>
+    </View>
+  )
+}
+
+const SignUp = () => {
+  return (
+    <View style={styles.layout}>
+      <Text style={styles.title}>Sign up screen</Text>
+    </View>
+  )
+}
 
 function App() {
   return (
