@@ -4,6 +4,17 @@ import { NavigationContainer, useNavigation } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 
+//  main screens
+const Tab = createBottomTabNavigator();
+
+const MainNavigator = () => {
+  return (
+    <Tab.Navigator>
+
+    </Tab.Navigator>
+  )
+}
+
 // onboarding screens
 const Stack = createStackNavigator();
 
@@ -14,7 +25,7 @@ const SignIn = () => {
   return (
     <View style={styles.layout}>
       <Text style={styles.title}>Sign in screen</Text>
-      <Button 
+      <Button
         title="Continue"
         onPress={() => nav.navigate('Main')}
       />
@@ -29,7 +40,7 @@ const SignUp = () => {
   return (
     <View style={styles.layout}>
       <Text style={styles.title}>Sign up screen</Text>
-      <Button title="Sign In" onPress={() => nav.navigate('SignIn')}/>
+      <Button title="Sign In" onPress={() => nav.navigate('SignIn')} />
     </View>
   )
 }
@@ -38,8 +49,10 @@ function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="SignIn" component={SignIn}/>
-        <Stack.Screen name="SignUp" component={SignUp}/>
+        <Stack.Screen name="SignIn" component={SignIn} />
+        <Stack.Screen name="SignUp" component={SignUp} />
+        <Stack.Screen name="Main" component={MainNavigator} />
+
       </Stack.Navigator>
     </NavigationContainer>
   );
