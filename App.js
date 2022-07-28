@@ -7,10 +7,45 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 //  main screens
 const Tab = createBottomTabNavigator();
 
+const Home = () => {
+  return (
+    <View style={styles.layout}>
+      <Text style={styles.title}>Home</Text>
+    </View>
+  )
+}
+
+const Feed = () => {
+  return (
+    <View style={styles.layout}>
+      <Text style={styles.title}>Feed</Text>
+    </View>
+  )
+}
+
+const Catalog = () => {
+  return (
+    <View style={styles.layout}>
+      <Text style={styles.title}>Catalog</Text>
+    </View>
+  )
+}
+
+const Account = () => {
+  return (
+    <View style={styles.layout}>
+      <Text style={styles.title}>Account</Text>
+    </View>
+  )
+}
+
 const MainNavigator = () => {
   return (
     <Tab.Navigator>
-
+      <Tab.Screen name="Home" component={Home}/>
+      <Tab.Screen name="Feed" component={Feed}/>
+      <Tab.Screen name="Catalog" component={Catalog}/>
+      <Tab.Screen name="Account" component={Account}/>
     </Tab.Navigator>
   )
 }
