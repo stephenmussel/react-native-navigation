@@ -25,10 +25,10 @@ const SignUp = () => {
 function App() {
   return (
     <NavigationContainer>
-      <View style={styles.layout}>
-        <Text style={styles.title}>Hello Again</Text>
-        <StatusBar style="auto" />
-      </View>
+      <Stack.Navigator>
+        <Stack.Screen name="SignIn" component={SignIn}/>
+        <Stack.Screen name="SignUp" component={SignUp}/>
+      </Stack.Navigator>
     </NavigationContainer>
   );
 }
