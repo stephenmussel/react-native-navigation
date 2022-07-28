@@ -1,15 +1,22 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
+import { StyleSheet, Text, View, Button } from 'react-native';
+import { NavigationContainer, useNavigation } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
 // onboarding screens
 const Stack = createStackNavigator();
 
 const SignIn = () => {
+
+  const nav = useNavigation();
+
   return (
     <View style={styles.layout}>
       <Text style={styles.title}>Sign in screen</Text>
+      <Button 
+        title="Sign Up"
+        onPress={() => nav.navigate('SignUp')}
+      />
     </View>
   )
 }
