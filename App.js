@@ -2,6 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Button } from 'react-native';
 import { NavigationContainer, useNavigation } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 
 // onboarding screens
 const Stack = createStackNavigator();
@@ -14,17 +15,21 @@ const SignIn = () => {
     <View style={styles.layout}>
       <Text style={styles.title}>Sign in screen</Text>
       <Button 
-        title="Sign Up"
-        onPress={() => nav.navigate('SignUp')}
+        title="Continue"
+        onPress={() => nav.navigate('Main')}
       />
     </View>
   )
 }
 
 const SignUp = () => {
+
+  const nav = useNavigation();
+
   return (
     <View style={styles.layout}>
       <Text style={styles.title}>Sign up screen</Text>
+      <Button title="Sign In" onPress={() => nav.navigate('SignIn')}/>
     </View>
   )
 }
